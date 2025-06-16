@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MythWalker
 
-## Getting Started
+## 概要
 
-First, run the development server:
+MythWalker は、日常の散歩を冒険に変える体験型 WEB アプリです。2 枚のカードを引くことで、散歩の「場所」と「アクティビティ」をランダムに決定し、新しい発見や楽しみを提供します。
+
+### 遊び方
+
+1. 「散歩を始める」ボタンをクリック
+2. 最初のカード（場所）が自動的に引かれます
+3. 「次のカードを引く」をクリック
+4. 2 枚目のカード（アクティビティ）が引かれます
+5. 指示に従って散歩を楽しみましょう！
+
+**例**: 「二駅先の駅」×「知らない雑誌を買う」
+
+## 技術スタック
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animation**: CSS Transform 3D
+
+## セットアップ
 
 ```bash
+# リポジトリのクローン
+git clone https://github.com/botan-party/myth-walker.git
+cd myth-walker
+
+# 依存関係のインストール
+npm install
+
+# 開発サーバーの起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+開発サーバーが起動したら、[http://localhost:3000](http://localhost:3000) にアクセスしてください。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 開発コマンド
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# 開発サーバー起動
+npm run dev
 
-## Learn More
+# ビルド
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# プロダクション実行
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## プロジェクト構造
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/                    # Next.js App Router
+├── components/            # 汎用的なコンポーネント
+│   ├── Button/
+│   └── Card/
+├── features/              # ドメイン固有の機能
+│   ├── card-draw/        # カード引き機能
+│   │   ├── _components/  # feature固有のコンポーネント
+│   │   └── hooks/        # カスタムフック
+│   └── walk-history/     # 散歩履歴機能（未実装）
+├── data/                  # カードデータ
+├── types/                 # TypeScript型定義
+└── utils/                 # ユーティリティ関数
+```
