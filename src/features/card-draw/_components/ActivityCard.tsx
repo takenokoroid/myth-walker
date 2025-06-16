@@ -9,12 +9,12 @@ interface ActivityCardProps {
 
 export const ActivityCard = ({ card, isFlipped, onClick }: ActivityCardProps) => {
   return (
-    <div className="w-64 h-96 cursor-pointer">
+    <div className="w-full h-40 md:w-64 md:h-96 cursor-pointer">
       <Card isFlipped={isFlipped} onClick={onClick}>
         {card && (
-          <div className="text-center">
-            <div className="text-sm text-gray-500 mb-4">何をする？</div>
-            <div className="text-2xl font-bold text-gray-800 leading-relaxed">
+          <div className="text-center flex flex-col justify-center h-full px-3 md:px-8">
+            <div className="text-xs md:text-sm text-gray-500 mb-2 md:mb-4">何をする？</div>
+            <div className="text-sm md:text-2xl font-bold text-gray-800 leading-tight md:leading-relaxed">
               {card.text}
             </div>
           </div>

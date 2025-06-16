@@ -18,3 +18,9 @@ export interface WalkSession {
   completed?: boolean;
   notes?: string;
 }
+
+export interface WalkHistory {
+  sessions: WalkSession[];
+  totalWalks: number;
+  lastWalk?: Date;
+}
